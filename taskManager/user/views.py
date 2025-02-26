@@ -20,7 +20,7 @@ def register(request):
             return redirect("task_list")
     else:
         form = UserRegisterForm()
-    return render(request, "user/register.html", {"form":form})
+    return render(request, "register.html", {"form":form})
 
 def login_user(request):
     if request.method == "POST":
@@ -32,7 +32,7 @@ def login_user(request):
             return redirect("task_list")
         else:
             messages.error(request, "Invalid username or password")
-    return render(request, "user/login.html")
+    return render(request, "login.html")
 
 def logout_user(request):
     logout(request)
